@@ -1,5 +1,4 @@
 #include "Node.h"
-// Probably want to include student thingy too 
 
 // Get next node
 Node* Node::getNext() {
