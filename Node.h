@@ -6,6 +6,15 @@
 #include <iostream>
 #include <cstring>
 // Probably wanna include the student thingy too 
+class Student{
+ public:
+  char firstname[35];
+  char lastname[35];
+  int id;
+  float gpa;
+
+  Student(char*, char*, int, float);
+};
 
 class Node {
  private:
