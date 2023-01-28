@@ -7,7 +7,7 @@ Node* init();
 void print(Node*);
 void add(Node*, Node*);
 void dlt(Node*, int);
-float average(Node*, float, float);
+void average(Node*, float, float);
 
 int main() {
   Node* head = init();
@@ -57,8 +57,8 @@ int main() {
     }else if(strcmp(input, "PRINT") == 0){
       print(head);
     }else if(strcmp(input, "AVG") == 0){
-      //average(head, 0, 0);
-      cout << "Average: " << average(head, 0, 0) << endl;
+      average(head, 0, 0);
+      //cout << "Average: " << average(head, 0, 0);
     }else if(strcmp(input, "QUIT") == 0){
       break;
     }
@@ -66,7 +66,7 @@ int main() {
     return 0;
 }
 
-float average(Node* current, float avg, float count){
+void average(Node* current, float avg, float count){
   count++;
   avg = avg + current->getStudent()->gpa;
   //OAcout << "average:" << avg << endl;
@@ -74,10 +74,11 @@ float average(Node* current, float avg, float count){
 
   if(current->getNext() != NULL){
    average(current->getNext(), avg, count);
+  }else{
+    float result = avg/count;
+    cout << "Average: " << result << endl;
+    return;
   }
-  float result = avg/count;
-  cout << result << endl;
-  return 0;
 }
 
 void dlt(Node* current, int studentID){
